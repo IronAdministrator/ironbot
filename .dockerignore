@@ -1,0 +1,110 @@
+# flyctl launch added from .gitignore
+# Environment variables
+**/.env
+**/.env.local
+**/.env.production
+
+# Database files
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/voiceTime.db*
+**/*.db-shm
+**/*.db-wal
+
+# Node modules
+**/node_modules
+**/.bun
+
+# Logs
+**/*.log
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+# OS generated files
+**/.DS_Store
+**/.DS_Store?
+**/._*
+**/.Spotlight-V100
+**/.Trashes
+**/ehthumbs.db
+**/Thumbs.db
+
+# IDE files
+**/.vscode
+**/.cursor
+**/.idea
+**/*.swp
+**/*.swo
+
+# Build outputs
+**/dist
+**/build
+
+# Runtime files
+**/*.pid
+**/*.seed
+**/*.pid.lock
+
+# Coverage directory used by tools like istanbul
+**/coverage
+**/*.lcov
+
+# Temporary folders
+**/tmp
+**/temp
+
+# dependencies (bun install)
+**/node_modules
+
+# output
+**/out
+**/dist
+**/*.tgz
+
+# code coverage
+**/coverage
+**/*.lcov
+
+# logs
+**/logs
+**/_.log
+**/report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+
+# dotenv environment variable files
+**/.env.development.local
+**/.env.test.local
+
+# caches
+**/.eslintcache
+**/.cache
+**/*.tsbuildinfo
+
+# Finder (MacOS) folder config
+**/.DS_Store
+
+# flyctl launch added from node_modules/minipass-sized/.gitignore
+# ignore most things, include some others
+node_modules/minipass-sized/*
+node_modules/minipass-sized/.*
+
+!node_modules/minipass-sized/**/bin
+!node_modules/minipass-sized/**/lib
+!node_modules/minipass-sized/**/docs
+!node_modules/minipass-sized/**/package.json
+!node_modules/minipass-sized/**/package-lock.json
+!node_modules/minipass-sized/**/README.md
+!node_modules/minipass-sized/**/CONTRIBUTING.md
+!node_modules/minipass-sized/**/LICENSE
+!node_modules/minipass-sized/**/CHANGELOG.md
+!node_modules/minipass-sized/**/example
+!node_modules/minipass-sized/**/scripts
+!node_modules/minipass-sized/**/tap-snapshots
+!node_modules/minipass-sized/**/test
+!node_modules/minipass-sized/**/.travis.yml
+!node_modules/minipass-sized/**/.gitignore
+!node_modules/minipass-sized/**/.gitattributes
+!node_modules/minipass-sized/**/coverage-map.js
+!node_modules/minipass-sized/**/index.js
+fly.toml

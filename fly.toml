@@ -1,0 +1,24 @@
+# fly.toml app configuration file generated for ironbot on 2025-06-29T15:14:28+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'ironbot'
+primary_region = 'fra'
+
+[build]
+  dockerfile = 'Dockerfile'
+
+[env]
+  NODE_ENV = 'production'
+
+# Remove HTTP service configuration - Discord bots don't need HTTP
+# [http_service] and [[services]] sections removed
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+
+[processes]
+  app = 'bun run start'
