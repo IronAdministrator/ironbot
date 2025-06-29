@@ -1,0 +1,25 @@
+{
+  "name": "ironbot",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun run --hot src/index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^24.0.7",
+    "ts-node": "^10.9.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^1.11.2",
+    "@discordjs/rest": "^2.5.1",
+    "date-fns": "^4.1.0",
+    "discord-api-types": "^0.37.97",
+    "discord.js": "^14.20.0"
+  }
+}
