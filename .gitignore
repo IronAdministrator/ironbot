@@ -7,6 +7,9 @@
 *.db
 *.sqlite
 *.sqlite3
+voiceTime.db*
+*.db-shm
+*.db-wal
 
 # Node modules
 node_modules/
@@ -37,6 +40,19 @@ Thumbs.db
 # Build outputs
 dist/
 build/
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Temporary folders
+tmp/
+temp/
 
 # dependencies (bun install)
 node_modules
