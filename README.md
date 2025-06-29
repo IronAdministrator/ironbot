@@ -13,25 +13,30 @@ A Discord bot that tracks voice channel time with detailed analytics and slash c
 ## Commands
 
 ### `/voicetime`
+
 Main command with the following options:
 
 **Period (Required):**
+
 - `Current Session` - Shows live time in your current voice channel
 - `Today` - Voice time for today
 - `This Week` - Voice time for this week
-- `This Month` - Voice time for this month  
+- `This Month` - Voice time for this month
 - `Overall` - Total voice time ever
 
 **Channel (Optional):**
+
 - Select a specific voice channel to filter results
 - Ignored for "Current Session" (shows helpful note)
 
 **Examples:**
+
 - `/voicetime period:Current Session` - Current session time
 - `/voicetime period:Today` - Today's total across all channels
 - `/voicetime period:Week channel:#Gaming` - This week's time in #Gaming only
 
 ### Text Commands
+
 - `!debug` - Shows tracking status and database information
 - `!hello` - Simple test command
 
