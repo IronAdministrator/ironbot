@@ -109,18 +109,21 @@ client.on("interactionCreate", async (interaction) => {
     if (interaction.replied || interaction.deferred) {
       await interaction.followUp({
         content: "There was an error while executing this command!",
-        ephemeral: true,
+        flags: 64, // MessageFlags.Ephemeral
       })
     } else {
       await interaction.reply({
         content: "There was an error while executing this command!",
-        ephemeral: true,
+        flags: 64, // MessageFlags.Ephemeral
       })
     }
   }
 })
 
 client.on("messageCreate", (message) => {
+  // Ignore messages from bots (including our own responses)
+  if (message.author.bot) return
+
   if (message.content === "!hello") {
     message.reply("Hello!")
   } else if (message.content === "!debug") {
@@ -154,9 +157,8 @@ client.on("messageCreate", (message) => {
     debugInfo += `• Guild ID: ${guildId}`
 
     message.reply(debugInfo)
-  } else {
-    console.log(message)
   }
+  // Removed the else block that was logging every non-command message
 })
 
 export const joinTimestamps = new Map<string, number>() // key = `${guildId}:${userId}`
@@ -166,12 +168,13 @@ client.on("voiceStateUpdate", (oldState, newState) => {
   const key = `${newState.guild.id}:${newState.id}`
   const username = newState.member?.user.username || "Unknown"
 
-  console.log(`🎤 Voice update for ${username}:`, {
-    oldChannel: oldState.channel?.name || null,
-    newChannel: newState.channel?.name || null,
-    userId: newState.id,
-    guildId: newState.guild.id,
-  })
+  // Only log significant voice events (join/leave/move), not every update
+  // console.log(`🎤 Voice update for ${username}:`, {
+  //   oldChannel: oldState.channel?.name || null,
+  //   newChannel: newState.channel?.name || null,
+  //   userId: newState.id,
+  //   guildId: newState.guild.id,
+  // })
 
   // User joined a channel
   if (!oldState.channel && newState.channel) {

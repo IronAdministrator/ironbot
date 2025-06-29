@@ -45,7 +45,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
       await interaction.reply({
         content:
           "❌ You're not currently in a voice channel or not being tracked.",
-        ephemeral: true,
+        flags: 64, // MessageFlags.Ephemeral
       })
       return
     }

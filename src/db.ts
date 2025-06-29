@@ -56,11 +56,12 @@ export function recordSession(
 ) {
   try {
     insertStmt.run(userId, guildId, channelId, start, end)
-    console.log(
-      `💾 Recorded session for user ${userId} in channel ${channelId}: ${Math.floor(
-        (end - start) / 1000
-      )}s`
-    )
+    // Only log in development - comment out for production
+    // console.log(
+    //   `💾 Recorded session for user ${userId} in channel ${channelId}: ${Math.floor(
+    //     (end - start) / 1000
+    //   )}s`
+    // )
   } catch (error) {
     console.error("❌ Error recording session:", error)
   }
