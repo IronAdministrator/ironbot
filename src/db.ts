@@ -1,9 +1,19 @@
 import { Database } from "bun:sqlite"
+import { existsSync, mkdirSync } from "fs"
 
 // Create database with proper error handling
 // Use persistent volume path for Railway deployment
 const dbPath =
   process.env.NODE_ENV === "production" ? "/data/voiceTime.db" : "voiceTime.db"
+
+// Ensure data directory exists for production
+if (process.env.NODE_ENV === "production") {
+  if (!existsSync("/data")) {
+    mkdirSync("/data", { recursive: true })
+    console.log("📁 Created /data directory for persistent storage")
+  }
+}
+
 const db = new Database(dbPath, {
   strict: true,
   create: true,
