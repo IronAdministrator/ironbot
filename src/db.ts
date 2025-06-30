@@ -1,7 +1,10 @@
 import { Database } from "bun:sqlite"
 
 // Create database with proper error handling
-const db = new Database("voiceTime.db", {
+// Use persistent volume path for Railway deployment
+const dbPath =
+  process.env.NODE_ENV === "production" ? "/data/voiceTime.db" : "voiceTime.db"
+const db = new Database(dbPath, {
   strict: true,
   create: true,
 })

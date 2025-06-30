@@ -3,4 +3,8 @@ builder = "nixpacks"
 
 [deploy]
 startCommand = "bun run start"
-restartPolicyType = "always" 
+restartPolicyType = "always"
+
+[[volumes]]
+name = "database"
+mountPath = "/data" 
